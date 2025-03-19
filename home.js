@@ -1,3 +1,16 @@
+        // js1: GoogleAuthExtensionクラスと認証関連のコード
+        class GoogleAuthExtension {
+            constructor() {
+                this.accountName = null;
+                this.fullName = null;
+                this.profilePicture = null;
+                this.userId = null;
+                this.locale = null;
+                this.emailVerified = null;
+                this.authWindow = null;
+            }
+        }
+
         function updateUI() {
             const name = localStorage.getItem('name');
             document.querySelector('.image-area').innerHTML = `<img src="${localStorage.getItem('icon') || 'icon-no-login.png'}" width="40px" class="profile-image">`;
