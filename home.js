@@ -1,3 +1,20 @@
+        function updateUI() {
+            const name = localStorage.getItem('name');
+            document.querySelector('.image-area').innerHTML = `<img src="${localStorage.getItem('icon') || 'icon-no-login.png'}" width="40px" class="profile-image">`;
+            document.querySelector('.name').textContent = name || '';
+            document.querySelector('.mail').textContent = localStorage.getItem('mail') || '';
+
+            if (!name) {
+                document.querySelectorAll('.main').forEach(el => el.style.display = 'none');
+                document.querySelectorAll('.login-info').forEach(el => el.style.display = 'block');
+            } else {
+                document.querySelectorAll('.main').forEach(el => el.style.display = 'block');
+                document.querySelectorAll('.login-info').forEach(el => el.style.display = 'none');
+            }
+        }
+
+
+        
         const weekdays = {
             1: '日曜日',
             2: '月曜日',
