@@ -206,7 +206,6 @@
             }
         
             if (isFirstLoad && yellowItem) {
-                yellowItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
             }
         }
         
