@@ -1,0 +1,266 @@
+header {
+    width: 100vw;
+    height: 65px;
+    color: rgb(84, 84, 84);
+    background-color: rgb(247, 247, 247);
+    padding: 10px 20px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 10px 15px 0 rgb(0, 0, 0 ,0.15);
+    z-index: 1000;
+}
+
+header .menu {
+    display: flex;
+    width: 100vw;
+    height: 65px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    position: fixed;
+    top: -20;
+    left: 0;
+    display: flex;
+    align-items: center;
+
+
+}
+
+header .menu li {
+    list-style: none;
+}
+
+header .menu li + li {
+    margin-left: 10px;
+}
+
+.menu-item {
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding-left: 20px;
+}
+
+body {
+    font-family: sans-serif;
+    padding: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+#fileList {
+    margin-bottom: 10px;
+}
+
+.file-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 85vw;
+    height: 50px;
+    margin-bottom: 8px;
+    background-color: rgb(247, 247, 247);
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding-left: 20px;
+    cursor: pointer;
+    border: 1px solid rgb(224, 224, 224);
+    box-shadow: 0 5px 7px 0 rgb(0, 0, 0 ,0.15);
+}
+
+.file-list:hover {
+    background-color: rgb(209, 226, 255);
+}
+
+.file-actions {
+    display: flex;
+    gap: 5px;
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.name-change {
+    background-color: rgb(247, 247, 247);
+    border: 2px solid rgb(224, 224, 224);
+    height: 40px;
+    width: 80px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.name-change:hover {
+    border: 2px solid rgb(150, 166, 255);
+}
+
+.copy {
+    background-color: rgb(247, 247, 247);
+    border: 2px solid rgb(224, 224, 224);
+    height: 40px;
+    width: 80px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.copy:hover {
+    border: 2px solid rgb(150, 166, 255);
+}
+
+.delete {
+    background-color: rgb(247, 247, 247);
+    border: 2px solid rgb(224, 224, 224);
+    height: 40px;
+    width: 80px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.delete:hover {
+    border: 2px solid rgb(150, 166, 255);
+}
+
+#fileList button {
+    margin-left: 5px;
+}
+
+#editor textarea {
+    width: 100%;
+    height: 300px;
+    white-space: pre-wrap;
+    resize: none;
+}
+
+.toolbar button {
+    margin-right: 5px;
+}
+
+#textArea {
+    border: 1px solid #ccc;
+    padding: 10px;
+    min-height: 300px;
+    outline: none;
+    box-shadow: none;
+    margin-top: 20px;
+}
+
+#textArea::selection {
+    background: rgba(92, 92, 92, 0.3);
+}
+
+.file-add {
+    margin-left: 40px;
+    cursor: pointer;
+    border: 1px solid rgb(224, 224, 224);
+    box-shadow: 0 5px 7px 0 rgb(0, 0, 0 ,0.15);
+    background-color: rgb(247, 247, 247);
+    border-radius: 10px;
+    width: 200px;
+    height: 35px;
+    font-size: 1rem;
+}
+
+.file-add:hover {
+    background-color: rgb(209, 226, 255);
+}
+
+.style-setting {
+    background-color: rgb(247, 247, 247);
+    width: 310px;
+    height: 120px;
+    box-shadow: 0 5px 7px 0 rgb(0, 0, 0 ,0.15);
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.system-setting {
+    background-color: rgb(247, 247, 247);
+    width: calc(100vw - 400px);
+    height: 120px;
+    box-shadow: 0 5px 7px 0 rgb(0, 0, 0 ,0.15);
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column;
+    padding: 10px 10px;
+}
+
+.font-color {
+    margin-top: 10px;
+    
+}
+
+.font-color:hover {
+    cursor: pointer;
+}
+
+.font-color-text {
+    font-weight: bold;
+    &#black {
+        color: black;
+    }
+    &#red {
+        color: red;
+    }
+    &#blue {
+        color: blue;
+    }
+    &#green {
+        color: green;
+    }
+}
+
+.system-btn {
+    background-color: white;
+    border: 2px solid #ccc;
+    height: 35px;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 30px;
+    background-size: 22px 22px;
+    background-repeat: no-repeat;
+    background-position: 4px 2px;
+    &#back-to-home {
+        background-image: url(img-memo/home.svg);
+    }
+}
+
+.system-btn:hover {
+    border: 2px solid rgb(150, 166, 255);
+}
+
+#resultText {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    outline: none;
+}
+
+#toggleBtn {
+    background-color: white;
+    border: 2px solid #ccc;
+    height: 35px;
+    font-weight: bold;
+    text-align: left;
+    text-align: center;
+}
+
+#toggleBtn:hover {
+    border: 2px solid rgb(150, 166, 255);
+}
+
+#language {
+    background-color: white;
+    border: 2px solid #ccc;
+    height: 35px;
+    font-weight: bold;
+    text-align: left;
+    text-align: center;
+}
+
+#languag:hover {
+    border: 2px solid rgb(150, 166, 255);
+}
