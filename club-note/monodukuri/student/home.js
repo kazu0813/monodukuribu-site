@@ -210,104 +210,78 @@ fetchSheetData();
 const grade = localStorage.getItem("grade") || "";
 const className = localStorage.getItem("className") || "";
 const Name = localStorage.getItem("Name") || "";
+document.querySelector(".grade").textContent = grade;
+document.querySelector(".class").textContent = className;
+document.querySelector(".name").textContent = Name;
 
 let qrcoderead;
+let currentFacingMode = 'environment'; // 初期カメラ（背面）
+let stream = null;
+let timer = null;
+let cameraActive = false;
 
 if (!grade || !className || !Name) {
-    qrcoderead = 1;
-
+  qrcoderead = 1;
+  window.location.href = 'login.html';
 } else {
-    qrcoderead = 0;
-    document.querySelector(".grade").textContent = grade;
-    document.querySelector(".class").textContent = className;
-    document.querySelector(".name").textContent = Name;
-    document.querySelectorAll('.qr-read').forEach(el => el.style.display = 'none');
+
 }
 
+// 初期に club-note を隠す場合
 if (qrcoderead === 1) {
-    document.querySelectorAll('.qr-read').forEach(el => el.style.display = 'block');
-
-    document.querySelectorAll('.club-note').forEach(el => el.style.display = 'none');
-
-
-    const constraints = { 
-        audio: false, 
-        video: {
-        facingMode: 'environment', 
-        width: 500, 
-        height: 500, 
-    }};
-
-    const drawRect = (topLeft, bottomRight) => {
-        const { x: x1, y: y1 } = topLeft;
-        const { x: x2, y: y2 }= bottomRight;
-
-        const overlay = document.querySelector('#overlay');
-        overlay.style.left = `${x1}px`;
-        overlay.style.top =`${y1}px`;
-        overlay.style.width = `${x2 - x1}px`;
-        overlay.style.height =`${y2 - y1}px`;
-    };
-
-    (async() => {
-        try {
-            const stream = await navigator.mediaDevices.getUserMedia(constraints);
-            const video = document.querySelector('video');
-            video.srcObject = stream;
-            video.play();
-
-            const { width, height } = constraints.video;
-            const canvas = new OffscreenCanvas(width, height);
-            const context = canvas.getContext('2d');
-  
-            const timer = setInterval(() => {
-            context.drawImage(video, 0, 0, width, height);
-            const imageData = context.getImageData(0, 0, width, height);
-            const code = jsQR(imageData.data, imageData.width, imageData.height);
-            if (code) {
-                document.querySelector('#result').textContent = code.data;
-                drawRect(code.location.topLeftCorner, code.location.bottomRightCorner);
-
-                // 例: code.data に '3/1,伊藤/千翔' や '"3/1","伊藤/千翔"' のような形式が入っていると仮定
-                let qrClubData = code.data;
-
-                // カンマで分割して x, y を取り出す
-                let [x, y] = qrClubData.split(',');
-
-                // xとyから " を除去
-                x = x.replace(/"/g, '');
-                y = y.replace(/"/g, '');
-
-                // xをスラッシュで分割して grade と className に
-                let [grade, className] = x.split('/');
-
-                // yの / をスペースに置き換え
-                let Name = y.replace(/\//g, ' ');
-
-                // ローカルストレージに保存
-                localStorage.setItem('grade', grade);
-                localStorage.setItem('className', className);
-                localStorage.setItem('Name', Name);
-                
-                qrcoderead = 0;
-                document.querySelector(".grade").textContent = grade;
-                document.querySelector(".class").textContent = className;
-                document.querySelector(".name").textContent = Name;
-                document.querySelectorAll('.qr-read').forEach(el => el.style.display = 'none');
-                document.querySelectorAll('.club-note').forEach(el => el.style.display = 'block');
-                window.open(window.location.href, '_blank');
-                window.close();
-
-
-
-            } else {
-                document.querySelector('#result').textContent = '';
-            }
-        }, 300);
-    } catch(error) {
-      console.log('load error', error);
-    }
-  })();
+  document.querySelectorAll('.club-note').forEach(el => el.style.display = 'none');
 } else {
   console.log("QRコードリーダーは無効化されています。");
+}
+
+
+
+
+//メニュー
+const account = document.querySelector('.account');
+const menu = document.querySelector('.ac-menu');
+
+let menuVisible = false;
+
+account.addEventListener('mouseenter', () => {
+    account.classList.add('hovered');
+  });
+
+  account.addEventListener('mouseleave', () => {
+    if (!menuVisible) {
+      account.classList.remove('hovered');
+    }
+  });
+
+  account.addEventListener('click', (e) => {
+    menuVisible = !menuVisible;
+    if (menuVisible) {
+      menu.style.display = 'block';
+      account.classList.add('hovered');
+    } else {
+      menu.style.display = 'none';
+      account.classList.remove('hovered');
+    }
+    e.stopPropagation();
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!account.contains(e.target) && !menu.contains(e.target)) {
+      hideMenu();
+    }
+  });
+
+ function hideMenu() {
+    menu.style.display = 'none';
+    account.classList.remove('hovered');
+    menuVisible = false;
+}
+
+//ログアウト
+function logout() {
+    localStorage.removeItem('Name');
+    localStorage.removeItem('grade');
+    localStorage.removeItem('className');
+
+    location.reload();
 }
