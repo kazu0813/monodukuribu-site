@@ -61,19 +61,73 @@ header .menu li + li {
     font-weight: bold;
     position: fixed;
     right: 0;
-    top: 0px;
+    top: -0.5px;
     cursor: pointer;
-    background-color: rgb(247, 247, 247);
     height: 65px;
     box-sizing: border-box;
     padding-top: 8px;
 }
 
-.account:hover {
+.account.hovered {
     background-color: rgb(206, 255, 230);;
 }
 
+.ac-menu {
+    display: none;
+    margin-top: 5px;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    position: fixed;
+    right: 10px;
+    top: 70px;
+    width: 250px;
+    height: 100px;
+    border-radius: 10px;
+    box-shadow: 0 5px 7px 0 rgba(29, 182, 106, 0.247);
+    border: 3px solid rgba(35, 201, 118, 0.425);
+}
+
+.ac-btn {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(114, 204, 159, 0.425);
+    height: 40px;
+    border-radius: 10px;
+    padding: 6px 50px;
+    box-sizing: border-box;
+    user-select: none;
+    cursor: pointer;
+    &.out {
+        background-image: url(https://kazu0813.github.io/monodukuribu-site/club-note/img/logout.svg);
+        background-repeat: no-repeat;
+        background-size: 25px 25px;
+        background-position: 7px 7px;
+        font-weight: bold;
+        color: rgb(255, 96, 96);
+    }
+}
+
+.ac-btn:hover {
+    border: 1px solid rgb(47, 212, 130);
+    background-color: rgba(114, 204, 159, 0.103);
+}
+
 /*QRコード*/
+.qrread {
+    width: 620px;
+    height: 400px;
+    background-color: rgb(255, 255, 255);
+    margin: 0 auto;
+    border-radius: 20px;
+    margin-top: 100px;
+    box-shadow: 0 5px 7px 0 rgba(29, 182, 106, 0.247);
+    border: 2px solid rgba(114, 204, 159, 0.425);
+    text-align: center;
+    color: rgb(91, 212, 151);
+    padding-top: 5px;
+    font-size: 1.3rem;
+    padding-top: 8px;
+}
+
 .camera {
     position: absolute;
     right: 50%;
@@ -81,19 +135,44 @@ header .menu li + li {
     background-color: lightblue;
     text-align: center;
     line-height: 100px;
-    margin-top: 100px;
+    margin-top: 18px;
 }
 
 
+.camera-on {
+    position: relative;
+    top: 290px;
+    left: 300px;
+    cursor: pointer;
+    user-select: none;
+    font-weight: bold;
+    color: rgb(91, 212, 151);
+    width: 160px;
+}
+
+.camera-ch {
+    position: relative;
+    top: 326px;
+    left: 475px;
+    cursor: pointer;
+    user-select: none;
+    font-weight: bold;
+    color: rgb(91, 212, 151);
+    width: 135px;
+}
+
+.qrcode-text {
+    margin: 0 auto;
+}
 /*メイン*/
 .schedule {
     width: 350px;
     height: auto;
     border-radius: 10px;
     box-sizing: border-box;
-    box-shadow: 0 5px 7px 0 rgb(0, 0, 0 ,0.15);
+    box-shadow: 0 5px 7px 0 rgba(29, 182, 106, 0.247);
     padding: 0px 10px;
-    border: 1px solid rgb(224, 224, 224);
+    border: 1px solid rgba(114, 204, 159, 0.425);
     position: relative;
     top: 100px;
     left: 10px;
@@ -102,23 +181,50 @@ header .menu li + li {
 
 .event {
     width: calc(100vw - 400px);
-    background-color: rgb(247, 247, 247);
+    background-color: rgb(255, 255, 255);
     top: auto;
     padding: 10px 10px;
     box-sizing: border-box;
     border-radius: 10px;
-    box-shadow: 0 5px 7px 0 rgb(0, 0, 0 ,0.15);
-    border: 1px solid rgb(224, 224, 224);
+    box-shadow: 0 5px 7px 0 rgba(29, 182, 106, 0.247);
+    border: 1px solid rgba(114, 204, 159, 0.425);
     position: relative;
     left: 370px;
     bottom: 375px;
     user-select: none;
 }
 
-.club-note-msg {
-    background-image: url(https://kazu0813.github.io/monodukuribu-site/club-note/img/icon.png);
-    background-size: 30px 30px;
-    background-repeat: no-repeat;
-    padding-left: 35px;
+.app {
+    width: calc(100vw - 400px);
+    background-color: rgb(255, 255, 255);
+    top: auto;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 5px 7px 0 rgba(29, 182, 106, 0.247);
+    border: 1px solid rgba(114, 204, 159, 0.425);
+    position: relative;
+    left: 370px;
+    bottom: 375px;
+    user-select: none;
 }
 
+.app-btn {
+    width: 95px;
+    height: 95px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    border: 3px solid rgb(224, 224, 224);
+    text-align: center;
+}
+
+.app-btn:hover {
+    background-color: rgb(220, 255, 237);
+    border-radius: 20px;
+    border: 3px solid rgb(91, 212, 151);
+}
+
+.app-icon {
+    position: relative;
+    padding: 10px 10px;
+}
