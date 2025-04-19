@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>Club Note</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="icon" href="https://kazu0813.github.io/monodukuribu-site/club-note/img/icon.png">
+
+</head>
+<body>
+    <header>
+        <ul class="menu" style="position:fixed; z-index: 1000;">
+            <li class="menu-item" style="padding-top: 5px; position: relative; right: 20px;">
+                <div style="display: flex;">
+                    <img src="https://kazu0813.github.io/monodukuribu-site/club-note/img/icon.png" style="width: 36px; height: 40px; position: relative; bottom: 3px;">
+                    <a class="head title">Club Note</a>
+                </div>
+            </li>
+            <li style="margin-right: 20px;">
+                <div class="account club-note">
+                    <a style="width: 10px;"></a>
+                    <img src="https://kazu0813.github.io/monodukuribu-site/club-note/img/account.svg" width="25px" style="position: relative; bottom: 4px;">
+                    <div style="display: flex; flex-flow: column; margin-left: 10px;">
+                        <div style="display: flex; font-size: 0.9rem;">
+                            <a class="grade" style="display: none;"></a>
+                            <a class="class" style="display: none;"></a>
+                            <a>ものづくり部</a>
+                        </div>
+                        <div style="display: flex;">
+                            <a class="name" style="font-size: 1.1rem;"></a>
+                            <a style="margin-left: 10px;">先生</a>
+                        </div>
+                    </div>
+                    <a style="width: 20px;"></a>
+                </div>
+            </li>
+        </ul>
+    </header>
+    <main class="club-note">
+
+        <div class="ac-menu" id="menu" style="z-index: 1000;">
+            <a><p class="ac-btn out" onclick="logout()" >ログアウト</p></a>
+        </div>
+
+        <div class="main">
+            <div class="schedule" style="margin-top: 10px; user-select: none;">
+                <h2>今日の予定</h2>
+                <div class="club-today">情報を収集中・・・</div>
+              
+                <h2>部活動スケジュール</h2>
+                <div class="club-list" style="height: 150px; overflow-y: auto; scroll-behavior: smooth;">情報を収集中・・・</div>
+              
+                <h2>部活動の時間</h2>
+                <div class="club-time">情報を収集中・・・</div>
+                
+                <br>
+            </div>
+            <div class="event top" style="margin-top: 20px;">
+                <a style="font-size: 1.3rem; font-weight: bold; color: rgb(29, 182, 105);">先生からのメッセージ</a>
+                <div class="teacher-msg" style="padding-top: 20px;">情報を収集中・・・</div>
+            </div>
+            <div class="event" style="margin-top: 20px;">
+                <a style="font-size: 1.3rem; font-weight: bold; color: rgb(29, 182, 105);" class="club-note-msg">Club Noteからのお知らせ</a>
+                <div style="padding-top: 20px;">Club Noteはタブレットやパソコンでの使用を推奨しています。</div>
+                <div>ブラウザの履歴（サイトデータ）を削除すると、Club Noteのアカウント情報が削除されるのでご注意ください。</div>
+            </div>
+            <div class="app" style="margin-top: 20px;">
+                <a style="font-size: 1.3rem; font-weight: bold; color: rgb(29, 182, 105);">アプリ</a>
+                <br>
+                <div style="display: flex; flex-wrap: wrap; justify-content: start; gap: 5%; row-gap: 15px; margin-left: 20px;">
+                    <div style="text-align: center; width: 120px;">
+                        <a href="https://docs.google.com/spreadsheets/d/1KDVo_LLdV8O8sWo7zh0cLCqHcx1Rm8zdCvH4tU7XgT8/edit?gid=0#gid=0" target="_blank">
+                            <p class="app-btn folder">
+                                <img src="https://kazu0813.github.io/monodukuribu-site/club-note/img/spreadsheets.png" width="100px" class="app-icon" style="bottom: 12px; right: 10px;">
+                            </p>
+                        </a>
+                        <p style="font-size: 0.9rem; margin-right: 10px;">予定表</p>
+                    </div>
+
+                    <div style="text-align: center; width: 120px;">
+                        <a href="https://docs.google.com/spreadsheets/d/1Z81Bjkbr6Wx-3AWcLnP_Ng8kDWzBVNrNKxY2QYeqcr8/edit?gid=0#gid=0" target="_blank">
+                            <p class="app-btn folder">
+                                <img src="https://kazu0813.github.io/monodukuribu-site/club-note/img/spreadsheets.png" width="100px" class="app-icon" style="bottom: 12px; right: 10px;">
+                            </p>
+                        </a>
+                        <p style="font-size: 0.9rem; margin-right: 15px;">生徒用お知らせ</p>
+                    </div>
+
+                    <div style="text-align: center; width: 120px;">
+                        <a href="https://kazu0813.github.io/monodukuribu-site/notepad/index.html" target="_blank">
+                            <p class="app-btn folder">
+                                <img src="https://kazu0813.github.io/monodukuribu-site/notepad/icon.png"
+                                width="100px" class="app-icon" style="bottom: 12px; right: 10px;">
+                            </p>
+                        </a>
+                        <p style="font-size: 0.9rem; margin-right: 15px;">メモ帳</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    
+</body>
+</html>
+<script src="qr.js"></script>
+<script src="home.js"></script>
