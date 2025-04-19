@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>Club Note</title>
+  <link rel="stylesheet" type="text/css" href="https://kazu0813.github.io/monodukuribu-site/club-note/style.css">
+</head>
+<body>
+    <header>
+        <ul class="menu" style="position:fixed; z-index: 1000;">
+            <li class="menu-item" style="padding-top: 5px; position: relative; right: 20px;">
+                <div style="display: flex;">
+                    <img src="https://kazu0813.github.io/monodukuribu-site/club-note/img/icon.png" style="width: 40px; height: 40px; position: relative; bottom: 3px;">
+                    <a class="head title">Club Note</a>
+                </div>
+            </li>
+            <li style="margin-right: 20px;">
+                <div class="account club-note">
+                    <a style="width: 10px;"></a>
+                    <img src="https://kazu0813.github.io/monodukuribu-site/club-note/img/account.svg" width="25px" style="position: relative; bottom: 4px;">
+                    <div style="display: flex; flex-flow: column; margin-left: 10px;">
+                        <div style="display: flex; font-size: 0.9rem;">
+                            <a class="grade"></a>
+                            <a>年</a>
+                            <a class="class"></a>
+                            <a>組</a>
+                            <a style="margin-left: 10px;">ものづくり部</a>
+                        </div>
+                        <div style="display: flex;">
+                            <a class="name" style="font-size: 1.1rem;"></a>
+                        </div>
+                    </div>
+                    <a style="width: 20px;"></a>
+                </div>
+            </li>
+        </ul>
+    </header>
+    <main class="club-note">
+        <div class="main">
+            <div class="schedule" style="margin-top: 10px; user-select: none;">
+                <h2>今日の予定</h2>
+                <div class="club-today">情報を収集中・・・</div>
+              
+                <h2>部活動スケジュール</h2>
+                <div class="club-list" style="height: 150px; overflow-y: auto; scroll-behavior: smooth;">情報を収集中・・・</div>
+              
+                <h2>部活動の時間</h2>
+                <div class="club-time">情報を収集中・・・</div>
+                
+                <br>
+            </div>
+            <div class="event top" style="margin-top: 20px;">
+                <a style="font-size: 1.3rem; font-weight: bold;">先生からのメッセージ</a>
+                <div class="teacher-msg" style="padding-top: 20px;">情報を収集中・・・</div>
+            </div>
+            <div class="event top" style="margin-top: 20px;">
+                <a style="font-size: 1.3rem; font-weight: bold;" class="club-note-msg">Club Noteからのお知らせ</a>
+                <div style="padding-top: 20px;">Club Noteはタブレットやパソコンでの使用を推奨しています。</div>
+                <div>ブラウザの履歴（サイトデータ）を削除すると、Club Noteのアカウント情報が削除されるのでご注意ください。</div>
+            </div>
+        </div>
+    </main>
+    <div class="qr-read">
+        <div id="result" style="min-height: 20px; display: none;"></div>
+        <video class="camera qr-read"></video>
+        <div id="overlay"></div>      
+    </div>
+    
+</body>
+</html>
+<script src="https://kazu0813.github.io/monodukuribu-site/club-note/home.js"></script>
+<script src="https://kazu0813.github.io/monodukuribu-site/club-note/qr.js"></script>
