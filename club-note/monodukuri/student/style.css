@@ -1,0 +1,124 @@
+header {
+    width: 100vw;
+    height: 65px;
+    color: rgb(84, 84, 84);
+    background-color: rgb(247, 247, 247);
+    padding: 10px 20px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 5px 2px 0 rgb(91, 212, 151);
+    z-index: 1000;
+    user-select: none;
+}
+
+header .menu {
+    display: flex;
+    width: 100vw;
+    height: 65px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    position: fixed;
+    top: -20;
+    left: 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+header .menu li {
+    list-style: none;
+}
+
+header .menu li + li {
+    margin-left: 10px;
+}
+
+.menu-item {
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding-left: 20px;
+}
+
+.head {
+    &.title {
+        font-size: 1.3rem;
+        width: 100px;
+        position: relative;
+        top: 2px;
+        left: 10px;
+    }
+}
+
+/*アカウント情報*/
+.account {
+    display: flex;
+    color: rgb(27, 119, 74);
+    font-weight: bold;
+    position: fixed;
+    right: 0;
+    top: 0px;
+    cursor: pointer;
+    background-color: rgb(247, 247, 247);
+    height: 65px;
+    box-sizing: border-box;
+    padding-top: 8px;
+}
+
+.account:hover {
+    background-color: rgb(206, 255, 230);;
+}
+
+/*QRコード*/
+.camera {
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+    background-color: lightblue;
+    text-align: center;
+    line-height: 100px;
+    margin-top: 100px;
+}
+
+
+/*メイン*/
+.schedule {
+    width: 350px;
+    height: auto;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 5px 7px 0 rgb(0, 0, 0 ,0.15);
+    padding: 0px 10px;
+    border: 1px solid rgb(224, 224, 224);
+    position: relative;
+    top: 100px;
+    left: 10px;
+    user-select: none;
+}
+
+.event {
+    width: calc(100vw - 400px);
+    background-color: rgb(247, 247, 247);
+    top: auto;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 5px 7px 0 rgb(0, 0, 0 ,0.15);
+    border: 1px solid rgb(224, 224, 224);
+    position: relative;
+    left: 370px;
+    bottom: 375px;
+    user-select: none;
+}
+
+.club-note-msg {
+    background-image: url(image/icon.png);
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    padding-left: 35px;
+}
+
