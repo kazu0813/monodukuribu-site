@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>ログイン</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="icon" href="https://kazu0813.github.io/monodukuribu-site/club-note/img/icon.png">
+
+</head>
+<body>
+    <header>
+        <ul class="menu" style="position:fixed; z-index: 1000;">
+            <li class="menu-item" style="padding-top: 5px; position: relative; right: 20px;">
+                <div style="display: flex;">
+                    <img src="https://kazu0813.github.io/monodukuribu-site/club-note/img/icon.png" style="width: 36px; height: 40px; position: relative; bottom: 3px;">
+                    <a class="head title">Club Note</a>
+                </div>
+            </li>
+        </ul>
+    </header>
+
+    <main class="club-note">
+    </main>
+
+
+    <div class="qrread">
+        カメラで<strong>ログインQRコード</strong>を読み取ってください。
+        <div id="result" style="min-height: 20px; display: none;"></div>
+        <video class="camera qr-read" style="display: none;"></video>
+        <div id="overlay" style="display: none"></div>
+        <div style="display: flex;" class="camera-ch">
+            <img src="https://kazu0813.github.io/monodukuribu-site/club-note/img/camera-change.svg" width="40px" onclick="cameraChange()" class="camera-change">
+            <a style="margin-top: 3px; padding-left: 5px;">切り替え</a>
+        </div>
+        <div style="display: flex;" class="camera-on" onclick="cameraONOFF()">
+            <img src="https://kazu0813.github.io/monodukuribu-site/club-note/img/camera.svg" width="40px">
+            <a style="margin-top: 7px; padding-left: 5px;" id="camera-toggle">ONにする</a>
+        </div>
+    </div>
+    
+</body>
+</html>
+<script src="qr.js"></script>
+<script src="login.js"></script>
