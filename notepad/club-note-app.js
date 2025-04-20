@@ -6,6 +6,19 @@ document.querySelector(".grade").textContent = grade;
 document.querySelector(".class").textContent = className;
 document.querySelector(".name").textContent = Name;
 
+//アカウント区別
+const teacherElements = document.querySelectorAll(".app-ac-teacher");
+const studentElements = document.querySelectorAll(".app-ac-student");
+
+if (grade === "null" && className === "null") {
+  // 教師を表示、学生を非表示
+  teacherElements.forEach(el => el.style.display = "block");
+  studentElements.forEach(el => el.style.display = "none");
+} else {
+  // 学生を表示、教師を非表示
+  teacherElements.forEach(el => el.style.display = "none");
+  studentElements.forEach(el => el.style.display = "block");
+}
 let qrcoderead;
 let currentFacingMode = 'environment'; // 初期カメラ（背面）
 let stream = null;
