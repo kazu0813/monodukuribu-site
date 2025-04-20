@@ -107,7 +107,7 @@ header .menu li + li {
     &.home {
         background-image: url(https://kazu0813.github.io/monodukuribu-site/club-note/img/icon.png);
         background-repeat: no-repeat;
-        background-size: 25px 25px;
+        background-size: 23px 25px;
         background-position: 7px 7px;
         font-weight: bold;
         color: rgb(91, 212, 151);
