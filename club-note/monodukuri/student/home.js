@@ -236,6 +236,11 @@ if (qrcoderead === 1) {
 
 
 
+//club noteのボタン更新
+function club_note_reload() {
+    location.reload();
+}
+
 
 //メニュー
 const account = document.querySelector('.account');
@@ -284,4 +289,8 @@ function logout() {
     localStorage.removeItem('className');
 
     location.reload();
+}
+
+function ac_info() {
+    location.href='https://kazu0813.github.io/monodukuribu-site/ac-info/index.html';
 }
