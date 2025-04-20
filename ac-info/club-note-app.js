@@ -5,6 +5,9 @@ const Name = localStorage.getItem("Name") || "";
 document.querySelector(".grade").textContent = grade;
 document.querySelector(".class").textContent = className;
 document.querySelector(".name").textContent = Name;
+document.querySelector(".ac-info-grade").textContent = grade;
+document.querySelector(".ac-info-class").textContent = className;
+document.querySelector(".ac-info-name").textContent = Name;
 
 //アカウント区別
 const teacherElements = document.querySelectorAll(".app-ac-teacher");
