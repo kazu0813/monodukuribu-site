@@ -104,6 +104,14 @@ header .menu li + li {
         font-weight: bold;
         color: rgb(255, 96, 96);
     }
+    &.ac-info {
+        background-image: url(https://kazu0813.github.io/monodukuribu-site/club-note/img/ac-info.svg);
+        background-repeat: no-repeat;
+        background-size: 25px 25px;
+        background-position: 7px 7px;
+        font-weight: bold;
+        color: rgb(77, 77, 77);
+    }
 }
 
 .ac-btn:hover {
