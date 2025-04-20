@@ -134,7 +134,7 @@ header .menu li + li {
 }
 
 .info-account2 {
-    width: calc(100vw - 400px);
+    width: 90vw;
     height: 400px;
     background-color: rgb(255, 255, 255);
     top: 100px;
