@@ -1,0 +1,82 @@
+.content-1 {
+    display: flex;
+    flex-flow: column;
+    width: calc(100vw - 320px);
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(225, 225, 225);
+    box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.438);
+    border-radius: 10px;
+    left: 270px;
+    bottom: 222px;
+    overflow: hidden;
+    user-select: none;
+}
+
+.content-2 {
+  display: flex;
+  flex-flow: column;
+  width: calc(100vw - 320px);
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(225, 225, 225);
+  box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.438);
+  border-radius: 10px;
+  left: 270px;
+  bottom: 222px;
+  overflow: hidden;
+  user-select: none;
+}
+
+.content-3 {
+  display: flex;
+  flex-flow: column;
+  width: calc(100vw - 320px);
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(225, 225, 225);
+  box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.438);
+  border-radius: 10px;
+  left: 270px;
+  bottom: 222px;
+  overflow: hidden;
+}
+
+.content-title {
+    font-size: 1.3rem; 
+    font-weight: bold; 
+    color: rgb(29, 182, 105);
+    padding: 10px 50px;
+    &.c-1 {
+      background-image: url(image/message.svg);
+      background-repeat: no-repeat;
+      background-size: 30px 30px;
+      background-position: 10px 10px;      
+    }
+    &.c-2 {
+      background-image: url(image/update.svg);
+      background-repeat: no-repeat;
+      background-size: 30px 30px;
+      background-position: 10px 11px;      
+    }
+}
+
+.app-btn {
+  width: 95px;
+  height: 95px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  border: 3px solid rgb(224, 224, 224);
+  text-align: center;
+}
+
+.app-btn:hover {
+  background-color: rgb(220, 255, 237);
+  border-radius: 20px;
+  border: 3px solid rgb(91, 212, 151);
+}
+
+.app-icon {
+  position: relative;
+  padding: 10px 10px;
+}
