@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>Club Note 情報</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="info.css">
+  <link rel="icon" href="../image/head/icon2.png">
+  <style>
+    .hidden { display: none; }
+    #fileList { margin-bottom: 10px; }
+    #fileList button { margin-left: 5px; }
+    #editor textarea {
+        width: 100%;
+        height: 300px;
+        white-space: pre-wrap;
+    }
+    .toolbar button {
+        margin-right: 5px;
+    }
+    #textArea {
+        border: 1px solid #ccc;
+        padding: 10px;
+        min-height: 300px;
+    }
+
+    #pasteBtn {
+        background-color: white;
+        border: 2px solid #ccc;
+        height: 35px;
+        font-weight: bold;
+        text-align: left;
+        text-align: center;
+    }
+
+    #pasteBtn:hover {
+        border: 2px solid rgb(150, 166, 255);
+    }
+  </style>
+</head>
+<body>
+    <header>
+        <ul class="menu" style="position:fixed; z-index: 1000;">
+            <li class="menu-item" style="padding-top: 5px; position: relative; right: 20px;">
+                <div style="display: flex;" onclick="club_note_reload()">
+                    <img src="../image/head/icon.png" style="width: 40px; height: 40px; position: relative; bottom: 3px;">
+                    <a class="head title" style="width: 150px;">Club Note</a>
+                </div>
+            </li>
+            <li style="margin-right: 20px;">
+                <div class="account club-note">
+                    <a style="width: 10px;"></a>
+                    <img src="../image/head/account.svg" width="25px" style="position: relative; bottom: 4px;">
+                    <div style="display: flex; flex-flow: column; margin-left: 10px;">
+                        <div style="display: flex; font-size: 0.9rem;">
+                            <a class="grade app-ac-student"></a>
+                            <a class="app-ac-student">年</a>
+                            <a class="class app-ac-student"></a>
+                            <a class="app-ac-student">組</a>
+                            <a style="margin-left: 10px;" class="app-ac-student"></a>
+                            <a>ものづくり部</a>
+                        </div>
+                        <div style="display: flex;">
+                            <a class="name" style="font-size: 1.1rem;"></a>
+                            <a style="margin-left: 10px;" class="app-ac-teacher">先生</a>
+                        </div>
+                    </div>
+                    <a style="width: 20px;"></a>
+                </div>
+            </li>
+        </ul>
+    </header>
+        <div class="ac-menu" id="menu" style="z-index: 1000;">
+            <a><p class="ac-btn out" onclick="logout()" style="position: relative; bottom: 30px;">ログアウト</p></a>
+        </div>
+        <div class="taskbar">
+            <a href="../top/" style="text-decoration: none;"><p class="task-btn ch t-top">トップ</p></a>
+            <a href="../app/" style="text-decoration: none;"><p class="task-btn ch t-app" style="bottom: 15px;">アプリ</p></a>
+            <a><p class="task-btn se t-info" style="bottom: 30px;">Club Note 情報</p></a>
+        </div>
+        <div class="content-1">
+            <a class="content-title c-1">お知らせ</a>
+            <div style="display: flex; flex-flow: column; margin-left: 50px; margin-top: 10px; line-height: 30px;">
+                <a style="color: red;">ブラウザの履歴（サイトデータ）を消去すると、アカウント情報やアプリ情報などがリセットされます。ご注意ください。</a>
+                <a>Club Note ver.1.1.0をリリースしました。</a>
+            </div>
+            <br>
+        </div>
+        <div class="content-2" style="margin-top: 10px;">
+            <a class="content-title c-2">ver.1.1.0 アップデート情報</a>
+            <div style="display: flex; flex-flow: column; margin-left: 50px; margin-top: 10px; line-height: 30px;">
+                <a style="font-weight: bold; font-size: 1.1rem;">追加機能</a>
+                <div style="margin-left: 20px; display: flex; flex-flow: column; line-height: 30px;">
+                    <a>・<strong>タスクバー</strong>を追加</a>
+                    <a>・部活予定の表示方法に<strong>カレンダー</strong>を追加</a>
+                    <a>・アプリタブに、<strong>外部サイト</strong>を追加</a>
+                </div>
+                <a style="font-weight: bold; font-size: 1.1rem;">機能変更</a>
+                <div style="margin-left: 20px; display: flex; flex-flow: column; line-height: 30px;">
+                    <a>・<strong>予定表（教師専用アプリ）</strong>で編集画面のデザインを変更</a>
+                    <a>・生徒と教師でのClub NoteのサイトURLを統一</a>
+                </div>
+                <a style="font-weight: bold; font-size: 1.1rem;">不具合修正</a>
+                <div style="margin-left: 20px; display: flex; flex-flow: column; line-height: 30px;">
+                    <a>・ログインQRコードが正常に読み込まれない不具合を修正</a>
+                </div>
+            </div>
+            <br>
+        </div>
+
+  <script src="login.js"></script>
+  <script src="info.js"></script>
+</body>
+</html>
