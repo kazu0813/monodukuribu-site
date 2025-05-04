@@ -1,0 +1,188 @@
+body {
+    background-color: rgb(246, 246, 246);
+    height: 0;
+}
+
+header {
+    width: 100vw;
+    height: 65px;
+    color: rgb(84, 84, 84);
+    background-color: rgb(247, 247, 247);
+    padding: 10px 20px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 5px 2px 0 rgb(91, 212, 151);
+    z-index: 1000;
+    user-select: none;
+}
+
+header .menu {
+    display: flex;
+    width: 100vw;
+    height: 65px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    position: fixed;
+    top: -20;
+    left: 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+header .menu li {
+    list-style: none;
+}
+
+header .menu li + li {
+    margin-left: 10px;
+}
+
+.menu-item {
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding-left: 20px;
+}
+
+.head {
+    &.title {
+        font-size: 1.3rem;
+        width: 100px;
+        position: relative;
+        top: 2px;
+        left: 10px;
+        color: rgb(38, 185, 135);
+    }
+}
+
+
+/*アカウント情報*/
+.account {
+    display: flex;
+    color: rgb(27, 119, 74);
+    font-weight: bold;
+    position: fixed;
+    right: 0;
+    top: -0.5px;
+    height: 65px;
+    box-sizing: border-box;
+    padding-top: 8px;
+}
+
+.account.hovered {
+    background-color: rgb(206, 255, 230);;
+}
+
+.ac-menu {
+    display: none;
+    margin-top: 5px;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    position: fixed;
+    right: 10px;
+    top: 70px;
+    width: 250px;
+    height: 50px;
+    border-radius: 10px;
+    box-shadow: 0 5px 7px 0 rgba(29, 182, 106, 0.247);
+    border: 3px solid rgba(35, 201, 118, 0.425);
+}
+
+.ac-btn {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(114, 204, 159, 0.425);
+    height: 40px;
+    border-radius: 10px;
+    padding: 6px 50px;
+    box-sizing: border-box;
+    user-select: none;
+    cursor: pointer;
+    &.out {
+        background-image: url(https://kazu0813.github.io/monodukuribu-site/club-note/img/logout.svg);
+        background-repeat: no-repeat;
+        background-size: 25px 25px;
+        background-position: 7px 7px;
+        font-weight: bold;
+        color: rgb(255, 96, 96);
+        margin-top: 30px;
+    }
+}
+
+.ac-btn:hover {
+    border: 1px solid rgb(47, 212, 130);
+    background-color: rgba(114, 204, 159, 0.103);
+}
+
+.taskbar {
+    background-color: rgb(255, 255, 255);
+    width: 250px;
+    height: 300px;
+    border-radius: 10px;
+    border: 1px solid rgb(225, 225, 225);
+    box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.438);
+    position: relative;
+    top: 85px;
+    left: 10px;
+    user-select: none;
+}
+
+.task-btn {
+    width: 230px;
+    height: 45px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 9px 45px;
+    margin-left: 10px;
+    font-weight: bold;
+    position: relative;
+    font-size: 1.1rem;
+    position: relative;
+    cursor: pointer;
+    &.se {
+        color: rgb(18, 134, 106);
+        &.t-info {
+            background-image: url(../image/task/se/info.svg);
+            background-repeat: no-repeat;
+            background-size: 22px 22px;
+            background-position: 15px 10px;
+            &.info-alert {
+                background-image:url(image/alert.svg), url(../image/task/se/info.svg);
+                background-repeat: no-repeat, no-repeat;
+                background-size: 22px 22px, 22px 22px;
+                background-position: 5px 0px, 15px 10px;
+            }
+        }
+    }
+    &.ch {
+        color: rgb(84, 84, 84);
+        &.t-top {
+            background-image: url(../image/task/ch/top.svg);
+            background-repeat: no-repeat;
+            background-size: 22px 22px;
+            background-position: 15px 10px;
+        }
+        &.t-app {
+            background-image: url(../image/task/ch/app.svg);
+            background-repeat: no-repeat;
+            background-size: 22px 22px;
+            background-position: 15px 10px;
+        }
+    }
+}
+
+.task-btn:hover {
+    background-color: rgb(246, 246, 246);
+}
+
+/*アカウント情報*/
+.text1 {
+    color: rgb(29, 182, 105);
+    
+    font-weight: bold;
+    font-size: 1.2rem;
+}

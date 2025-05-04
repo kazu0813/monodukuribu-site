@@ -1,0 +1,176 @@
+.content-1 {
+    display: flex;
+    flex-flow: column;
+    width: calc(100vw - 320px);
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(225, 225, 225);
+    box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.438);
+    border-radius: 10px;
+    left: 270px;
+    bottom: 222px;
+    overflow: hidden;
+    user-select: none;
+}
+
+.content-2 {
+  display: flex;
+  flex-flow: column;
+  width: calc(100vw - 320px);
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(225, 225, 225);
+  box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.438);
+  border-radius: 10px;
+  left: 270px;
+  bottom: 222px;
+  overflow: hidden;
+  user-select: none;
+}
+
+.content-3 {
+  display: flex;
+  flex-flow: column;
+  width: calc(100vw - 320px);
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(225, 225, 225);
+  box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.438);
+  border-radius: 10px;
+  left: 270px;
+  bottom: 222px;
+  overflow: hidden;
+}
+
+.content-title {
+    font-size: 1.3rem; 
+    font-weight: bold; 
+    color: rgb(29, 182, 105);
+    padding: 10px 50px;
+    user-select: none;
+    &.c-1 {
+      background-image: url(image/message.svg);
+      background-repeat: no-repeat;
+      background-size: 30px 30px;
+      background-position: 10px 10px;      
+    }
+    &.c-2 {
+      background-image: url(image/update.svg);
+      background-repeat: no-repeat;
+      background-size: 30px 30px;
+      background-position: 10px 11px;      
+    }
+    &.c-3 {
+      background-image: url(image/dl.svg);
+      background-repeat: no-repeat;
+      background-size: 30px 30px;
+      background-position: 10px 11px;
+      &.info-alert {
+        background-image:url(image/alert.svg), url(image/dl.svg);
+        background-repeat: no-repeat, no-repeat;
+        background-size: 22px 22px, 30px 30px;
+        background-position: 0px 0px, 10px 11px;
+    }     
+    }
+}
+
+
+.dl-info {
+  position: relative;
+  display: inline-block;
+  font-size: 18px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.dl-mark {
+  background-color: red;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  padding: 0px 8.5px;
+  font-size: 1.2rem;
+  box-sizing: border-box;
+  color: white;
+  font-weight: bold;
+  user-select: none;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.block {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.downloadBtn {
+  padding: 10px 20px;
+  box-sizing: border-box;
+  font-size: 16px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  white-space: nowrap;
+  width: 175px;
+  font-weight: bold;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.ready {
+  background-color: #007BFF;
+}
+
+.downloadBtn:not(.ready) {
+  background-color: #888;
+}
+
+.downloadBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.progress-container {
+  position: relative;
+  width: 200px;
+  height: 30px;
+}
+
+progress {
+  width: 100%;
+  height: 30px;
+  background-color: #ccc; /* 背景を灰色に */
+  border-radius: 5px;
+  appearance: none;
+}
+
+progress::-webkit-progress-bar {
+  background-color: #6b6b6b; /* Chrome/Safari 用の背景色 */
+  border-radius: 5px;
+}
+
+progress::-webkit-progress-value {
+  background-color: rgb(0, 123, 255); /* 進捗部分の色（例：緑） */
+  border-radius: 5px;
+}
+
+.percent-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  pointer-events: none;
+  color: white;
+}
