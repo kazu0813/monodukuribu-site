@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>ダウンロードコンテンツ</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="icon" href="../../app/image/content.png">
+</head>
+<body>
+    <header>
+        <ul class="menu" style="position:fixed; z-index: 1000;">
+            <li class="menu-item" style="padding-top: 5px; position: relative; right: 20px;">
+                <div style="display: flex;">
+                    <img src="../../app/image/content.png" style="width: 40px; height: 40px; position: relative; bottom: 3px;">
+                    <a class="head title" style="position: relative; right: 10px; width: 270px;">ダウンロードコンテンツ</a>
+                </div>
+            </li>
+            <li style="margin-right: 20px;">
+                <div class="account club-note">
+                    <a style="width: 10px;"></a>
+                    <img src="../../image/head/account.svg" width="25px" style="position: relative; bottom: 4px;">
+                    <div style="display: flex; flex-flow: column; margin-left: 10px;">
+                        <div style="display: flex; font-size: 0.9rem;">
+                            <a class="grade app-ac-student"></a>
+                            <a class="app-ac-student">年</a>
+                            <a class="class app-ac-student"></a>
+                            <a class="app-ac-student">組</a>
+                            <a style="margin-left: 10px;" class="app-ac-student"></a>
+                            <a>ものづくり部</a>
+                        </div>
+                        <div style="display: flex;">
+                            <a class="name" style="font-size: 1.1rem;"></a>
+                        </div>
+                    </div>
+                    <a style="width: 20px;"></a>
+                </div>
+            </li>
+        </ul>
+    </header> 
+    <div id="content" style="margin-top: 100px; display: none;"></div>
+    <p class="load-msg" style="display: block;">ダウンロードコンテンツを読み込んでいます。</p>
+  <script src="script.js"></script>
+  <script src="club-note-app.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>クリップボード整形</title>
+</head>
+<body>
+  <button onclick="processClipboard()">クリップボード整形</button>
+  <p id="result"></p>
+
+  <script>
+    async function processClipboard() {
+      try {
+        // クリップボードから読み取る
+        const text = await navigator.clipboard.readText();
+        
+        // 改行（\r や \n）をすべて削除
+        const cleaned = text.replace(/[\r\n]/g, '');
+
+        // 結果をクリップボードに書き込む
+        await navigator.clipboard.writeText(cleaned);
+
+        // 結果を画面に表示
+        document.getElementById('result').textContent = cleaned;
+      } catch (err) {
+        console.error('エラー:', err);
+        document.getElementById('result').textContent = 'エラーが発生しました';
+      }
+    }
+  </script>
+</body>
+</html>

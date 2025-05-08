@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>アカウント設定</title>
+  <link rel="icon" href="image/data1.png">
+  <style>
+    body {
+    background-color: rgb(246, 246, 246);
+    height: 0;
+}
+
+header {
+    width: 100vw;
+    height: 65px;
+    color: rgb(84, 84, 84);
+    background-color: rgb(247, 247, 247);
+    padding: 10px 20px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 5px 2px 0 rgb(91, 212, 151);
+    z-index: 1000;
+    user-select: none;
+}
+
+header .menu {
+    display: flex;
+    width: 100vw;
+    height: 65px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    position: fixed;
+    top: -20;
+    left: 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+header .menu li {
+    list-style: none;
+}
+
+header .menu li + li {
+    margin-left: 10px;
+}
+
+.menu-item {
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding-left: 20px;
+}
+
+.head {
+    &.title {
+        font-size: 1.3rem;
+        width: 100px;
+        position: relative;
+        top: 2px;
+        left: 10px;
+        color: rgb(38, 185, 135);
+    }
+}
+
+
+/*アカウント情報*/
+.account {
+    display: flex;
+    color: rgb(27, 119, 74);
+    font-weight: bold;
+    position: fixed;
+    right: 0;
+    top: -0.5px;
+    height: 65px;
+    box-sizing: border-box;
+    padding-top: 8px;
+}
+
+.text1 {
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.input-group {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px; /* 入力欄とボタンの間に少し余白を入れる */
+    }
+
+  </style>
+</head>
+<body>
+    <header>
+        <ul class="menu" style="position:fixed; z-index: 1000;">
+            <li class="menu-item" style="padding-top: 5px; position: relative; right: 20px;">
+                <div style="display: flex;">
+                    <img src="image/data1.png" style="width: 40px; height: 40px; position: relative; bottom: 3px;">
+                    <a class="head title" style="position: relative; right: 10px; width: 190px;">アカウント設定</a>
+                </div>
+            </li>
+            <li style="margin-right: 20px;">
+                <div class="account club-note">
+                    <a style="width: 10px;"></a>
+                    <img src="../../image/head/account.svg" width="25px" style="position: relative; bottom: 4px;">
+                    <div style="display: flex; flex-flow: column; margin-left: 10px;">
+                        <div style="display: flex; font-size: 0.9rem;">
+                            <a class="grade app-ac-student"></a>
+                            <a class="app-ac-student">年</a>
+                            <a class="class app-ac-student"></a>
+                            <a class="app-ac-student">組</a>
+                            <a style="margin-left: 10px;" class="app-ac-student"></a>
+                            <a>ものづくり部</a>
+                        </div>
+                        <div style="display: flex;">
+                            <a class="name" style="font-size: 1.1rem;"></a>
+                        </div>
+                    </div>
+                    <a style="width: 20px;"></a>
+                </div>
+            </li>
+        </ul>
+    </header>
+    <main style="margin-top: 100px; margin-left: 30px;">
+        <div style="display: flex; flex-flow: column;">
+            <a class="text1">アカウント名を設定</a>
+            <a style="margin-top: 5px;">右上に表示されているアカウントの表示を変更します。</a>
+            <div class="input-group">
+                <input type="text" id="nameInput" placeholder="名前を入力">
+                <button onclick="saveName()">保存</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // ヘッダー情報読み込み
+        const grade = localStorage.getItem("grade") || "";
+        const className = localStorage.getItem("className") || "";
+        const Name = localStorage.getItem("Name") || "";
+      
+        // 名前の「○○」部分だけを抽出
+        function extractName(fullText) {
+          return fullText.replace(/^ログイン中…\s*/, '');
+        }
+      
+        // ヘッダーの学生情報表示
+        document.querySelector(".grade").textContent = grade;
+        document.querySelector(".class").textContent = className;
+        document.querySelector(".name").textContent = Name;
+      
+        // アカウント区別処理
+        const teacherElements = document.querySelectorAll(".app-ac-teacher");
+        const studentElements = document.querySelectorAll(".app-ac-student");
+      
+        if (grade === "null" && className === "null") {
+          teacherElements.forEach(el => el.style.display = "block");
+          studentElements.forEach(el => el.style.display = "none");
+        } else {
+          teacherElements.forEach(el => el.style.display = "none");
+          studentElements.forEach(el => el.style.display = "block");
+        }
+      
+        // QR読み取り制御
+        let qrcoderead;
+        if (!grade || !className || !Name) {
+            qrcoderead = 1;
+        } else {
+            qrcoderead = 0;
+        }
+        if (qrcoderead === 1) {
+          location.href='https://kazu0813.github.io/monodukuribu-site/security-block';
+        }
+      
+        // 入力欄初期表示（名前だけ）
+        function loadName() {
+          const savedText = localStorage.getItem('Name') || 'ログイン中… ゲスト';
+          document.getElementById('nameInput').value = extractName(savedText);
+        }
+      
+        // 名前を保存してリロード
+        function saveName() {
+          const nameOnly = document.getElementById('nameInput').value.trim();
+          if (nameOnly) {
+            const fullText = `ログイン中… ${nameOnly}`;
+            localStorage.setItem('Name', fullText);
+            location.reload(); // 保存後にリロード
+          }
+        }
+      
+        // ページ読み込み時に実行
+        window.onload = loadName;
+      </script>
+      
+</body>
+</html>
