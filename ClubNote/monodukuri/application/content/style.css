@@ -1,0 +1,131 @@
+body {
+    background-color: rgb(246, 246, 246);
+    height: 0;
+}
+
+header {
+    width: 100vw;
+    height: 65px;
+    color: rgb(84, 84, 84);
+    background-color: rgb(247, 247, 247);
+    padding: 10px 20px;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 5px 2px 0 rgb(91, 212, 151);
+    z-index: 1000;
+    user-select: none;
+}
+
+header .menu {
+    display: flex;
+    width: 100vw;
+    height: 65px;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    position: fixed;
+    top: -20;
+    left: 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+}
+
+header .menu li {
+    list-style: none;
+}
+
+header .menu li + li {
+    margin-left: 10px;
+}
+
+.menu-item {
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding-left: 20px;
+}
+
+.head {
+    &.title {
+        font-size: 1.3rem;
+        width: 100px;
+        position: relative;
+        top: 2px;
+        left: 10px;
+        color: rgb(38, 185, 135);
+    }
+}
+
+
+/*アカウント情報*/
+.account {
+    display: flex;
+    color: rgb(27, 119, 74);
+    font-weight: bold;
+    position: fixed;
+    right: 0;
+    top: -0.5px;
+    height: 65px;
+    box-sizing: border-box;
+    padding-top: 8px;
+}
+
+
+.dl-content-list {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: white;
+    width: 700px;
+    margin: 0 auto;
+    margin-top: 10px;
+  }
+  .dl-content-list div {
+    margin-right: 10px;
+  }
+  .dl-content-list img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+  }
+
+  .dl-content-list .title {
+    width: 400px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+　.dl-button {
+    background-color: white;
+    border: 1px solid rgba(114, 204, 159, 0.425);
+    border-radius: 10px;
+    position: relative;
+    bottom: 4px;
+    cursor: pointer;
+    text-align: center;
+    height: 40px;
+  }
+  
+  .dl-button:hover {
+    border: 1px solid rgb(47, 212, 130);
+    background-color: rgba(114, 204, 159, 0.103);
+  }
+
+  .load-msg {
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+    margin-top: 100px;
+  }
+
+  .info-alert {
+    display: block;
+  }

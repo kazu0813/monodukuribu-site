@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ローカルストレージ表示（配列対応）</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    iframe {
+      width: 100vw;
+      height: 100vh;
+      border: none;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+<iframe id="viewer"></iframe>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const contentId = params.get('content');
+
+  if (contentId) {
+    const storedData = localStorage.getItem(contentId);
+
+    if (storedData) {
+      try {
+        const parsedArray = JSON.parse(storedData); // 配列としてパース
+
+        if (Array.isArray(parsedArray) && parsedArray.length > 0) {
+          const lastContent = parsedArray[parsedArray.length - 1]; // 最後の要素を取得
+          const iframe = document.getElementById('viewer');
+          const doc = iframe.contentDocument || iframe.contentWindow.document;
+          doc.open();
+          doc.write(lastContent); // HTMLとして表示
+          doc.close();
+        } else {
+          alert("データは空の配列です。");
+        }
+
+      } catch (e) {
+        alert("ローカルストレージのデータがJSON配列として無効です。");
+      }
+
+    } else {
+      alert(`ローカルストレージに「${contentId}」というIDのデータが見つかりません。`);
+    }
+  } else {
+    alert("URLに 'content' パラメータが含まれていません。");
+  }
+</script>
+
+</body>
+</html>
